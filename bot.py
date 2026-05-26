@@ -534,10 +534,7 @@ async def cmd_admin(update: Update, ctx: ContextTypes.DEFAULT_TYPE) -> None:
     ])
     
     # Надсилаємо панель адміну в приватний чат
-    await ctx.bot.send_message(
-        chat_id=update.effective_user.id,
-        text=text,
-        reply_markup=kb
+    await update.message.reply_text(text, reply_markup=kb)
     )
 
 # ─── ADMIN: /post ──────────────────────────────────────────────────────────────
